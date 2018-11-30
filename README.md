@@ -8,18 +8,18 @@
 
 1. 下载整个全部文件，放到你的小程序根目录下
 2. 在小程序页面的js种直接引入代码:`var bdParse = require('../../bdParse/bdParse.js')`;
+   对应css中引入`@import "../../bdParse/bdParse.css"`;
 3. 在需要的字段使用baparse，代码：（注意：article和content不要重复）
    ` that.setData({
           content:bdParse.bdParse('article', 'html', content, that, 5),
     })`
 4. swan页面引入模板，`<import src="../../bdParse/bdParse.swan" />`
-  然后在需要显示富文本的地方调用：`<template is="bdParse" data="{{article}}" />`
+  然后在需要显示富文本的地方调用：`<template is="bdParse" data="{{ {bdParseData:article.nodes} }}" />` (注意：data调用改为和wxParse一致写法，注意是三个大括号，原先的直接写{{article}}不再支持，请注意修改)
 
 #### 使用说明
 
-1. swan调用模板的data="{{article}}"和setData中的article保持一致。
-2. 调用bdparse组件的时候，组件已经把富文本内容赋值（即setData）给了article，所以swan可以直接data="{{article}}"。
-3. wxParse的调用方式为{{wxParseData:article.nodes}}，这里和他的不一样。
+1. swan调用模板的data="{{ {bdParseData:article.nodes} }}"和setData中的article保持一致。
+2. 调用bdparse组件的时候，组件已经把富文本内容赋值（即setData）给了article；{{ {bdParseData:article.nodes} }} 这种写法的意思是：把article.nodes的内容赋值给bdParseData,bdParse.swan中调用的是bdParseData。
 
 #### 其他说明
 

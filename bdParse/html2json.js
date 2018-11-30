@@ -285,7 +285,7 @@ function transEmojiStr(str){
   return emojiObjs;
 }
 
-function emojisInit(reg='',baseSrc="/wxParse/emojis/",emojis){
+function emojisInit(reg='',baseSrc="/bdParse/emojis/",emojis){
     __emojisReg = reg;
     __emojisBaseSrc=baseSrc;
     __emojis=emojis;
