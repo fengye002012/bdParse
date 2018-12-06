@@ -202,3 +202,4 @@ view{
   overflow: hidden;
 }
 .bdParse-br{ height: 10px; line-height: 10px; overflow: hidden;}
+.bdParse-p{ display: block;line-height: 100%;}
