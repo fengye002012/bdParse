@@ -10,7 +10,7 @@
 <template name="bdParseVideo">
   <!--增加video标签支持，并循环添加-->
   <view class="{{item.classStr}} bdParse-{{item.tag}}" style="{{item.styleStr}}">
-    <video class="{{item.classStr}} bdParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+    <video class="{{item.classStr}} bdParse-{{item.tag}}-video" poster="{{item.attr.poster}}" autoplay="{{item.attr.autoplay}}" controls="{{item.attr.controls}}" loop="{{item.attr.loop}}" muted="{{item.attr.muted}}"   src="{{item.attr.src}}"></video>
   </view>
 </template>
 
